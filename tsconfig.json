@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "es2017",
+    "module": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "typeRoots": ["./Resources/Private/ImageEditor/src/typings"]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

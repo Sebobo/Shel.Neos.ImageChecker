@@ -1,0 +1,16 @@
+*.map binary
+Plugin.js binary
+Plugin.css binary
+
+/.yarn export-ignore
+/.github export-ignore
+/Resources/Private/ImageChecker export-ignore
+
+/.eslintignore export-ignore
+/.eslintrc.js export-ignore
+/.nvmrc export-ignore
+/.prettierrc export-ignore
+/.yarnrc.yml export-ignore
+/package.json export-ignore
+/tsconfig.json export-ignore
+/yarn.lock export-ignore

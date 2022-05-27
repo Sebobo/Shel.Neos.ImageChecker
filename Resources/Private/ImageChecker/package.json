@@ -1,0 +1,20 @@
+{
+  "name": "image-editor",
+  "version": "1.0.0",
+  "description": "Extended Image Editor with checks",
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "build": "neos-react-scripts build",
+    "watch": "neos-react-scripts watch"
+  },
+  "devDependencies": {
+    "@neos-project/neos-ui-extensibility": "^5.3.17",
+    "@neos-project/react-ui-components": "^5.3.17",
+    "plow-js": "^2.2.0",
+    "react": "^16.14.0"
+  },
+  "neos": {
+    "buildTargetDirectory": "../../Public/JavaScript/ImageEditor"
+  }
+}

@@ -1,0 +1,33 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          Shel.Neos.ImageChecker:
+            - Main
+    Ui:
+      resources:
+        stylesheets:
+          'Shel.Neos.ImageChecker:ImageChecker':
+            resource: resource://Shel.Neos.ImageChecker/Public/JavaScript/ImageChecker/Plugin.css
+
+        javascript:
+          'Shel.Neos.ImageChecker:ImageChecker':
+            resource: resource://Shel.Neos.ImageChecker/Public/JavaScript/ImageChecker/Plugin.js
+
+      frontendConfiguration:
+        'Shel.Neos.ImageChecker:ImageChecker':
+          enabled: true
+          defaults:
+            fileSize:
+              default: 2048
+              svg: 100
+              png: null
+              jpg: null
+            fileDimensions:
+              maxWidth: null
+              maxHeight: null
+              minWidth: null
+              minHeight: null
+            fileName:
+              allowedPattern: '^[0-9a-zA-Z_\-.]+$'
