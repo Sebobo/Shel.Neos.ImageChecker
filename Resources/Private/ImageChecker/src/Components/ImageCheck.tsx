@@ -4,21 +4,18 @@ import React, { useCallback, useEffect, useState } from 'react';
 import backend from '@neos-project/neos-ui-backend-connector';
 import { IconButton } from '@neos-project/react-ui-components';
 
-import Image from '../Interfaces/Image';
+// import Image from '../Interfaces/Image';
 import './ImageCheck.vanilla-css';
-import CheckResult from '../Interfaces/CheckResult';
 import CheckResultItem from './CheckResultItem';
-import { checkFilename } from '../Checks/filename';
-import { checkFileSize } from '../Checks/filesize';
-import { checkFileDimensions } from '../Checks/filedimensions';
-import { ImageCheckOptions } from '../Interfaces/ImageCheckOptions';
+import { checkFilename, checkFileSize, checkFileDimensions } from '../Checks';
 
 interface Props {
     value: string | { __identity: string };
     options: ImageCheckOptions;
+    translate: (id?: string, fallback?: string, params?: Record<string, any>) => string;
 }
 
-const ImageCheck: React.FC<Props> = ({ value, options }) => {
+const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
     const [image, setImage] = useState<Image>(null);
     const [fileNameCheck, setFileNameCheck] = useState<CheckResult>(null);
     const [fileSizeCheck, setFileSizeCheck] = useState<CheckResult>(null);
@@ -45,7 +42,10 @@ const ImageCheck: React.FC<Props> = ({ value, options }) => {
         if (image) {
             checkFilename(image.originalImageResourceUri, options.fileName).then(setFileNameCheck);
             checkFileSize(image.originalImageResourceUri, options.fileSize).then(setFileSizeCheck);
-            checkFileDimensions(image.originalDimensions, options.fileDimensions).then(setFileDimensionsCheck);
+            // The dimensions check does not work for SVGs yet as the dimensions are not stored in the image metadata
+            if (image.mediaType !== 'image/svg+xml') {
+                checkFileDimensions(image.originalDimensions, options.fileDimensions).then(setFileDimensionsCheck);
+            }
         } else {
             setFileNameCheck(null);
             setFileSizeCheck(null);
@@ -65,20 +65,36 @@ const ImageCheck: React.FC<Props> = ({ value, options }) => {
     return (
         <div className="image-check">
             <IconButton
-                icon={hasWarning ? 'exclamation-triangle' : 'check-double'}
+                icon={hasWarning ? 'exclamation-triangle' : 'info'}
                 size="small"
-                style={hasWarning ? 'warn' : 'success'}
-                title={hasWarning ? 'The asset is invalid' : 'The asset is valid'}
+                style={hasWarning ? 'warn' : imageCheckVisible ? 'brand' : 'lighter'}
+                title={
+                    hasWarning
+                        ? translate('checks.hasWarnings', 'The asset is invalid')
+                        : translate('checks.valid', 'The asset is valid')
+                }
                 onClick={toggleImageCheck}
             />
             {imageCheckVisible && (
                 <div className="image-check__results">
-                    <strong>Image Check</strong>
                     <table>
-                        {fileNameCheck && <CheckResultItem label="Filename" checkResult={fileNameCheck} />}
-                        {fileSizeCheck && <CheckResultItem label="Filesize" checkResult={fileSizeCheck} />}
+                        {fileNameCheck && (
+                            <CheckResultItem
+                                label={translate('checks.filename.label', 'Filename')}
+                                checkResult={fileNameCheck}
+                            />
+                        )}
+                        {fileSizeCheck && (
+                            <CheckResultItem
+                                label={translate('checks.filesize.label', 'Filesize')}
+                                checkResult={fileSizeCheck}
+                            />
+                        )}
                         {fileDimensionsCheck && (
-                            <CheckResultItem label="Dimensions" checkResult={fileDimensionsCheck} />
+                            <CheckResultItem
+                                label={translate('checks.dimensions.label', 'Dimensions')}
+                                checkResult={fileDimensionsCheck}
+                            />
                         )}
                     </table>
                 </div>

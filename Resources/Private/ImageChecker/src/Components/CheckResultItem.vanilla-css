@@ -1,5 +1,6 @@
 .image-check-result td {
     padding: .3rem 0;
+    vertical-align: top;
 }
 
 .image-check-result__label {

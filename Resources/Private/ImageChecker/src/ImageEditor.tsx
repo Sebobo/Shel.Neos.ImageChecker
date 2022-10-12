@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
 // @ts-ignore
@@ -9,7 +9,6 @@ import I18n from '@neos-project/neos-ui-i18n';
 import ImageCheck from './Components/ImageCheck';
 import I18nRegistry from './Interfaces/I18nRegistry';
 import './ImageEditor.vanilla-css';
-import { ImageCheckOptions } from './Interfaces/ImageCheckOptions';
 
 interface EditorProps {
     value: string | { __identity: string };
@@ -18,7 +17,7 @@ interface EditorProps {
 }
 
 export default function makeCustomImageEditor(DefaultImageEditor: any, defaults: ImageCheckOptions) {
-    return class MyImageEditor extends PureComponent<EditorProps> {
+    return class MyImageEditor extends React.PureComponent<EditorProps> {
         static propTypes = {
             value: PropTypes.oneOfType([PropTypes.shape({ __identifier: PropTypes.string }), PropTypes.string]),
             commit: PropTypes.func.isRequired,
@@ -32,11 +31,17 @@ export default function makeCustomImageEditor(DefaultImageEditor: any, defaults:
             options: {} as ImageCheckOptions,
         };
 
+        constructor(props) {
+            super(props);
+
+            this.translate = this.translate.bind(this);
+        }
+
         componentDidMount() {
             this.mergeOptions();
         }
 
-        componentDidUpdate(prevProps: Readonly<EditorProps>, prevState: Readonly<{}>, snapshot?: any) {
+        componentDidUpdate(prevProps: Readonly<EditorProps>) {
             if (this.props.value !== prevProps.value) {
                 this.mergeOptions();
             }
@@ -69,6 +74,10 @@ export default function makeCustomImageEditor(DefaultImageEditor: any, defaults:
             });
         }
 
+        translate(id?: string, fallback?: string, params?: Record<string, any>): string {
+            return this.props.i18nRegistry.translate(id, fallback, params, 'Shel.Neos.ImageChecker', 'Main');
+        }
+
         render() {
             const { value } = this.props;
             const { options } = this.state;
@@ -76,7 +85,7 @@ export default function makeCustomImageEditor(DefaultImageEditor: any, defaults:
             return (
                 <div className="image-editor-container">
                     <DefaultImageEditor {...this.props} />
-                    {value && options && <ImageCheck value={value} options={options} />}
+                    {value && options && <ImageCheck value={value} options={options} translate={this.translate} />}
                 </div>
             );
         }

@@ -1,5 +1,3 @@
-import CheckResult from '../Interfaces/CheckResult';
-
 const MAX_HEIGHT = 10000;
 const MAX_WIDTH = 10000;
 const MIN_HEIGHT = 0;

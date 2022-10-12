@@ -1,0 +1,87 @@
+.image-check {
+    --success-color: #00a338;
+    --error-color: #ff460d;
+    --warn-color: #ff8700;
+    --border-color: #666;
+
+    position: relative;
+    margin-top: 1rem;
+}
+
+.image-check__results {
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.image-check__results table {
+    margin-top: .5rem;
+    width: 100%;
+}
+
+.image-check > button {
+    position: absolute;
+    top: -48px;
+    right: 0;
+}
+
+.image-check-result td {
+    padding: .3rem 0;
+    vertical-align: top;
+}
+
+.image-check-result__label {
+}
+
+.image-check-result__icon {
+    width: 2rem;
+}
+
+.image-check-result__icon svg {
+    margin: 0 .5rem;
+    color: var(--success-color);
+}
+
+.image-check-result__icon.error svg {
+    color: var(--warn-color);
+}
+
+.image-check-result__value {
+    font-family: monospace;
+    max-width: 120px;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.image-check-result__error-message {
+    background: var(--warn-color);
+    padding: .3rem .5rem;
+    display: inline-block;
+    margin: .5rem 0;
+    position: relative;
+}
+
+.image-check-result__error-message::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -8px;
+    left: .5rem;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--warn-color);
+}
+
+.image-check-result + .image-check-result {
+    border-top: 1px solid #ccc;
+}
+
+.image-editor-container {
+    position: relative;
+}
+
+
+/*# sourceMappingURL=Plugin.css.map*/

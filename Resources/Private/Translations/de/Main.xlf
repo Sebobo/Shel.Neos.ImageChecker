@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product="Shel.Neos.Video" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="checks.hasWarnings">
+                <source>The asset didn't pass all checks</source>
+                <target>Die Datei hat nicht alle Prüfungen bestanden</target>
+            </trans-unit>
+            <trans-unit id="checks.valid">
+                <source>The asset passed all checks</source>
+                <target>Die Datei hat alle Prüfungen bestanden</target>
+            </trans-unit>
+            <trans-unit id="checks.filename.label">
+                <source>Filename</source>
+                <target>Dateiname</target>
+            </trans-unit>
+            <trans-unit id="checks.filesize.label">
+                <source>Filesize</source>
+                <target>Dateigröße</target>
+            </trans-unit>
+            <trans-unit id="checks.dimensions.label">
+                <source>Dimensions</source>
+                <target>Abmessungen</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

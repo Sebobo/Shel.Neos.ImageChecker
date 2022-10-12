@@ -5,10 +5,24 @@ selected image. It supports global and individual configurations for each image 
 
 ## Installation
 
-TODO
+Add the plugin as dependency to your Neos CMS project:
 
-## Example
-                                                        
+    composer require shel/neos-image-checker
+
+## Examples
+
+### Example with all checks passing
+
+[![Example with passed checks](Documentation/imagechecker-valid.png)](Documentation/imagechecker-valid.png)
+
+Note: the details are not shown by default and can be toggled by clicking on the "i" button.
+
+### Example with some checks failing
+
+[![Example with failed checks](Documentation/imagechecker-invalid.png)](Documentation/imagechecker-invalid.png)
+
+Note: the details are shown in this case by default and can be toggled by clicking on the "alert" button.
+
 ## Configuration
 
 After installation the default image editor in your Neos installation is replaced by the one from this package.
@@ -69,3 +83,7 @@ My.Vendor:My.NodeType:
                 fileName: # matches the filename without extension
                   allowedPattern: '^[a-z]+$'
 ```
+
+## License
+
+See [License](LICENSE.txt)

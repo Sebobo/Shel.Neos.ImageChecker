@@ -461,9 +461,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neos-project/neos-ui-extensibility@npm:^5.3.17":
-  version: 5.3.17
-  resolution: "@neos-project/neos-ui-extensibility@npm:5.3.17"
+"@neos-project/neos-ui-extensibility@npm:^7.3.5":
+  version: 7.3.5
+  resolution: "@neos-project/neos-ui-extensibility@npm:7.3.5"
   dependencies:
     "@neos-project/build-essentials": 5.2.5
     "@neos-project/positional-array-sorter": 5.2.5
@@ -486,7 +486,7 @@ __metadata:
     style-loader: ^2.0.0
   bin:
     neos-react-scripts: bin/neos-react-scripts.js
-  checksum: 16ed48c57b0d972a84c4c3ad4f98ffe4f24e0918b5719d07e3f4531f2522c5c5123199287270fa5d34d3cebb759e8436f753ee4e69877bc07562254ea5766018
+  checksum: ddfaf523cf748002300f6ca0a52b034bbc46b96902c66b18f1ff93de7caf2208be292cc7ca7ed8d31471f6b1eb570482f8662ea1c89ea5a32ade0ad801307910
   languageName: node
   linkType: hard
 
@@ -497,9 +497,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@neos-project/react-ui-components@npm:^5.3.17":
-  version: 5.3.17
-  resolution: "@neos-project/react-ui-components@npm:5.3.17"
+"@neos-project/react-ui-components@npm:^7.3.5":
+  version: 7.3.5
+  resolution: "@neos-project/react-ui-components@npm:7.3.5"
   peerDependencies:
     "@friendsofreactjs/react-css-themr": ^4.1.0
     classnames: ^2.2.3
@@ -520,8 +520,9 @@ __metadata:
     react-height: ^3.0.0
     react-motion: ^0.5.0
     react-portal: ^4.2.0
+    react-svg: ^11.1.2
     react-textarea-autosize: ^8.3.0
-  checksum: 929a48a9a52a01a844ec87d4f3c9ee9410afdbd8095f3490a8bcdcc6f2ed84e9958435d99badbe69a0a2a77aa8c62606d06fffd3b02022697add1b39c0cc79c3
+  checksum: a291de0480723fef06d31fc139f72d24f8bca86922b23002ff07f9c7e4dd62ab08be37175ba6bec80ad7bf5c26d94f7f09c0b29f0c0712f6b45a4ca9d49ab915
   languageName: node
   linkType: hard
 
@@ -686,10 +687,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:*":
+  version: 15.7.5
+  resolution: "@types/prop-types@npm:15.7.5"
+  checksum: 5b43b8b15415e1f298243165f1d44390403bb2bd42e662bca3b5b5633fdd39c938e91b7fce3a9483699db0f7a715d08cef220c121f723a634972fdf596aec980
+  languageName: node
+  linkType: hard
+
 "@types/q@npm:^1.5.1":
   version: 1.5.5
   resolution: "@types/q@npm:1.5.5"
   checksum: 3bd386fb97a0e5f1ce1ed7a14e39b60e469b5ca9d920a7f69e0cdb58d22c0f5bdd16637d8c3a5bfeda76663c023564dd47a65389ee9aaabd65aee54803d5ba45
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:16.14":
+  version: 16.14.32
+  resolution: "@types/react@npm:16.14.32"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: e26290b15049020d1ed09a4f6f3fb93d17079da52850e7ef1a3f5bd19847e1acb921bfca8e602cb6af08cb2e54f1eba252082ab32b96a7db76c07197d20ff88d
+  languageName: node
+  linkType: hard
+
+"@types/scheduler@npm:*":
+  version: 0.16.2
+  resolution: "@types/scheduler@npm:0.16.2"
+  checksum: b6b4dcfeae6deba2e06a70941860fb1435730576d3689225a421280b7742318d1548b3d22c1f66ab68e414f346a9542f29240bc955b6332c5b11e561077583bc
   languageName: node
   linkType: hard
 
@@ -3753,6 +3779,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csstype@npm:^3.0.2":
+  version: 3.1.1
+  resolution: "csstype@npm:3.1.1"
+  checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
+  languageName: node
+  linkType: hard
+
 "cyclist@npm:^1.0.1":
   version: 1.0.1
   resolution: "cyclist@npm:1.0.1"
@@ -6014,10 +6047,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "image-editor@workspace:Resources/Private/ImageChecker"
   dependencies:
-    "@neos-project/neos-ui-extensibility": ^5.3.17
-    "@neos-project/react-ui-components": ^5.3.17
+    "@neos-project/neos-ui-extensibility": ^7.3.5
+    "@neos-project/react-ui-components": ^7.3.5
+    "@types/react": 16.14
     plow-js: ^2.2.0
-    react: ^16.14.0
+    react: ^16.14
   languageName: unknown
   linkType: soft
 
@@ -9484,7 +9518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^16.14.0":
+"react@npm:^16.14":
   version: 16.14.0
   resolution: "react@npm:16.14.0"
   dependencies:

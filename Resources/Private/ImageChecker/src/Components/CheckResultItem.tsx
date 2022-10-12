@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Icon } from '@neos-project/react-ui-components';
 
-import CheckResult from '../Interfaces/CheckResult';
-
 import './CheckResultItem.vanilla-css';
 
 interface Props {

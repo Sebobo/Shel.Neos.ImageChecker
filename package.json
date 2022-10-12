@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "yarn workspace image-editor run build",
-    "watch": "yarn workspaces image-editor run watch"
+    "watch": "yarn workspace image-editor run watch"
   },
   "workspaces": [
     "Resources/Private/ImageChecker"

@@ -1,5 +1,3 @@
-import CheckResult from '../Interfaces/CheckResult';
-
 export function checkFilename(pathAndFilename: string, options: { allowedPattern: string }): Promise<CheckResult> {
     const filename = pathAndFilename.split('/').pop();
     // TODO: Do we also need to check the extension?

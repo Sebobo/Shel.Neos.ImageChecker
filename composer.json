@@ -3,8 +3,8 @@
   "type": "neos-plugin",
   "name": "shel/neos-image-checker",
   "require": {
-    "neos/neos": "^5.3 || ^7.3 || ^8.0",
-    "neos/neos-ui": "^5.3 || ^7.3 || ^8.0"
+    "neos/neos": "^7.3 || ^8.0",
+    "neos/neos-ui": "^7.3 || ^8.0"
   },
   "extra": {
     "neos": {

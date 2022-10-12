@@ -3,7 +3,7 @@ import manifest from '@neos-project/neos-ui-extensibility';
 import makeCustomImageEditor from './ImageEditor';
 
 manifest('Shel.Neos.ImageChecker:ImageEditor', {}, (globalRegistry, { frontendConfiguration }) => {
-    const { enabled, defaults } = frontendConfiguration['Shel.Neos.ImageChecker:ImageEditor'];
+    const { enabled, defaults } = frontendConfiguration['Shel.Neos.ImageChecker:ImageChecker'];
 
     if (!enabled) {
         return;
