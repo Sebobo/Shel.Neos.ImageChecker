@@ -38,7 +38,7 @@ Neos:
   Neos:
     Ui:
      frontendConfiguration:
-      'Shel.Neos.ImageChecker:ImageEditor':
+      'Shel.Neos.ImageChecker:ImageChecker':
         enabled: true # allows disabling the checks for all image properties
         defaults:
           fileSize:
