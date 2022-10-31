@@ -7,7 +7,14 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "typeRoots": ["./Resources/Private/ImageEditor/src/typings"]
+    "typeRoots": [
+      "./Resources/Private/ImageEditor/src/typings"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
   "exclude": [
     "node_modules"

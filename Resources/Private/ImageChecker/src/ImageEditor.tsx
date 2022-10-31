@@ -1,14 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-// @ts-ignore
-import { neos } from '@neos-project/neos-ui-decorators';
-// @ts-ignore
-import I18n from '@neos-project/neos-ui-i18n';
-
 import ImageCheck from './Components/ImageCheck';
 import I18nRegistry from './Interfaces/I18nRegistry';
-import './ImageEditor.vanilla-css';
+import style from './ImageEditor.module.css';
 
 interface EditorProps {
     value: string | { __identity: string };
@@ -23,7 +18,6 @@ export default function makeCustomImageEditor(DefaultImageEditor: any, defaults:
             commit: PropTypes.func.isRequired,
             validationErrors: PropTypes.array,
             options: PropTypes.object,
-
             i18nRegistry: PropTypes.object.isRequired,
         };
 
@@ -83,7 +77,7 @@ export default function makeCustomImageEditor(DefaultImageEditor: any, defaults:
             const { options } = this.state;
 
             return (
-                <div className="image-editor-container">
+                <div className={style.imageEditorContainer}>
                     <DefaultImageEditor {...this.props} />
                     {value && options && <ImageCheck value={value} options={options} translate={this.translate} />}
                 </div>

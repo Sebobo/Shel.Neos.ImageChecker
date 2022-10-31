@@ -10,7 +10,6 @@ manifest('Shel.Neos.ImageChecker:ImageEditor', {}, (globalRegistry, { frontendCo
     }
 
     const editorsRegistry = globalRegistry.get('inspector').get('editors');
-
     const standardImageEditorDefinition = editorsRegistry.get('Neos.Neos/Inspector/Editors/ImageEditor');
 
     editorsRegistry.set('Neos.Neos/Inspector/Editors/ImageEditor', {

@@ -1,5 +1,5 @@
 declare module '*.css';
-declare module '*.vanilla-css';
+declare module '*.module.css';
 
 type Image = {
     mediaType: string;

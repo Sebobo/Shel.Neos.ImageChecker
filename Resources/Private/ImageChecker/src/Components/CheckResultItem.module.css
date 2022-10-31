@@ -1,25 +1,25 @@
-.image-check-result td {
+.imageCheckResult td {
     padding: .3rem 0;
     vertical-align: top;
 }
 
-.image-check-result__label {
+.imageCheckResult__label {
 }
 
-.image-check-result__icon {
+.imageCheckResult__icon {
     width: 2rem;
 }
 
-.image-check-result__icon svg {
+.imageCheckResult__icon svg {
     margin: 0 .5rem;
-    color: var(--success-color);
+    color: #00a338;
 }
 
-.image-check-result__icon.error svg {
-    color: var(--warn-color);
+.imageCheckResult__icon.error svg {
+    color: #ff8700;
 }
 
-.image-check-result__value {
+.imageCheckResult__value {
     font-family: monospace;
     max-width: 120px;
     overflow: hidden;
@@ -28,15 +28,15 @@
     width: 100%;
 }
 
-.image-check-result__error-message {
-    background: var(--warn-color);
+.errorMessage {
+    background: #ff8700;
     padding: .3rem .5rem;
     display: inline-block;
     margin: .5rem 0;
     position: relative;
 }
 
-.image-check-result__error-message::before {
+.errorMessage::before {
     content: '';
     display: block;
     position: absolute;
@@ -46,9 +46,5 @@
     left: .5rem;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--warn-color);
-}
-
-.image-check-result + .image-check-result {
-    border-top: 1px solid #ccc;
+    border-bottom: 8px solid #ff8700;
 }

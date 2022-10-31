@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Icon } from '@neos-project/react-ui-components';
 
-import './CheckResultItem.vanilla-css';
+import style from './CheckResultItem.module.css';
 
 interface Props {
     label: string;
@@ -12,19 +12,22 @@ interface Props {
 const CheckResultItem: React.FC<Props> = ({ label, checkResult }) => {
     return (
         <>
-            <tr className="image-check-result">
-                <td className="image-check-result__label">{label}:</td>
-                <td className={['image-check-result__icon', !checkResult.isValid && 'error'].join(' ')}>
+            <tr className={style.imageCheckResult}>
+                <td className={style.imageCheckResult__label}>{label}:</td>
+                <td className={[style.imageCheckResult__icon, !checkResult.isValid && style.error].join(' ')}>
                     <Icon icon={checkResult.isValid ? 'check-circle' : 'exclamation-triangle'} />
                 </td>
-                <td className="image-check-result__value" title={checkResult.value}>
+                <td className={style.imageCheckResult__value} title={checkResult.value}>
                     {checkResult.value}
                 </td>
             </tr>
             {checkResult.errorMessage && (
                 <tr>
                     <td colSpan={3}>
-                        <p className="image-check-result__error-message">{checkResult.errorMessage}</p>
+                        <p
+                            className={style.errorMessage}
+                            dangerouslySetInnerHTML={{ __html: checkResult.errorMessage }}
+                        ></p>
                     </td>
                 </tr>
             )}

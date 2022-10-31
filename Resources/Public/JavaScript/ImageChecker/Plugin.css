@@ -1,51 +1,25 @@
-.image-check {
-    --success-color: #00a338;
-    --error-color: #ff460d;
-    --warn-color: #ff8700;
-    --border-color: #666;
-
-    position: relative;
-    margin-top: 1rem;
-}
-
-.image-check__results {
-    padding: 0 0 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.image-check__results table {
-    margin-top: .5rem;
-    width: 100%;
-}
-
-.image-check > button {
-    position: absolute;
-    top: -48px;
-    right: 0;
-}
-
-.image-check-result td {
+.CheckResultItem-module__imageCheckResult___W17Y3 td {
     padding: .3rem 0;
     vertical-align: top;
 }
 
-.image-check-result__label {
+.CheckResultItem-module__imageCheckResult__label___1DueN {
 }
 
-.image-check-result__icon {
+.CheckResultItem-module__imageCheckResult__icon___2N4Ry {
     width: 2rem;
 }
 
-.image-check-result__icon svg {
+.CheckResultItem-module__imageCheckResult__icon___2N4Ry svg {
     margin: 0 .5rem;
-    color: var(--success-color);
+    color: #00a338;
 }
 
-.image-check-result__icon.error svg {
-    color: var(--warn-color);
+.CheckResultItem-module__imageCheckResult__icon___2N4Ry.CheckResultItem-module__error___EOVtP svg {
+    color: #ff8700;
 }
 
-.image-check-result__value {
+.CheckResultItem-module__imageCheckResult__value___2zUs_ {
     font-family: monospace;
     max-width: 120px;
     overflow: hidden;
@@ -54,15 +28,15 @@
     width: 100%;
 }
 
-.image-check-result__error-message {
-    background: var(--warn-color);
+.CheckResultItem-module__errorMessage___3oKk_ {
+    background: #ff8700;
     padding: .3rem .5rem;
     display: inline-block;
     margin: .5rem 0;
     position: relative;
 }
 
-.image-check-result__error-message::before {
+.CheckResultItem-module__errorMessage___3oKk_::before {
     content: '';
     display: block;
     position: absolute;
@@ -72,14 +46,31 @@
     left: .5rem;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--warn-color);
+    border-bottom: 8px solid #ff8700;
 }
 
-.image-check-result + .image-check-result {
-    border-top: 1px solid #ccc;
+.ImageCheck-module__imageCheck___2pq8E {
+    position: relative;
+    margin-top: 1rem;
 }
 
-.image-editor-container {
+.ImageCheck-module__imageCheck__results___3M1_o {
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid #666;
+}
+
+.ImageCheck-module__imageCheck__results___3M1_o table {
+    margin-top: .5rem;
+    width: 100%;
+}
+
+.ImageCheck-module__imageCheck___2pq8E > button {
+    position: absolute;
+    top: -48px;
+    left: 108px; /* Sets the position on the right side of the standard asset buttons */
+}
+
+.ImageEditor-module__imageEditorContainer___22F7e {
     position: relative;
 }
 

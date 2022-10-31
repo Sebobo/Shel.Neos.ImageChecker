@@ -4,10 +4,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import backend from '@neos-project/neos-ui-backend-connector';
 import { IconButton } from '@neos-project/react-ui-components';
 
-// import Image from '../Interfaces/Image';
-import './ImageCheck.vanilla-css';
 import CheckResultItem from './CheckResultItem';
 import { checkFilename, checkFileSize, checkFileDimensions } from '../Checks';
+
+import style from './ImageCheck.module.css';
 
 interface Props {
     value: string | { __identity: string };
@@ -63,7 +63,7 @@ const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
     if (!image) return null;
 
     return (
-        <div className="image-check">
+        <div className={style.imageCheck}>
             <IconButton
                 icon={hasWarning ? 'exclamation-triangle' : 'info'}
                 size="small"
@@ -76,7 +76,7 @@ const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
                 onClick={toggleImageCheck}
             />
             {imageCheckVisible && (
-                <div className="image-check__results">
+                <div className={style.imageCheck__results}>
                     <table>
                         {fileNameCheck && (
                             <CheckResultItem
