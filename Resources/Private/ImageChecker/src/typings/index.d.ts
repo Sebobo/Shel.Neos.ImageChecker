@@ -1,6 +1,8 @@
 declare module '*.css';
 declare module '*.module.css';
 
+type TranslateMethod = (id?: string, fallback?: string, params?: Record<string, any>) => string;
+
 type Image = {
     mediaType: string;
     object: {

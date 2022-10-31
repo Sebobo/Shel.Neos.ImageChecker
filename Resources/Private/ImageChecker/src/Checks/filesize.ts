@@ -7,7 +7,11 @@ interface FileSizeCheckOptions {
     png?: number;
 }
 
-export function checkFileSize(url: string, options: FileSizeCheckOptions): Promise<CheckResult> {
+export function checkFileSize(
+    url: string,
+    options: FileSizeCheckOptions,
+    translate: TranslateMethod
+): Promise<CheckResult> {
     return fetch(url, { method: 'HEAD' }).then((response) => {
         if (response.ok) {
             // maxSize is given in KB, so we convert the actual filesize to KB too
@@ -45,14 +49,18 @@ export function checkFileSize(url: string, options: FileSizeCheckOptions): Promi
             return {
                 isValid,
                 value: `${Math.round(displayFileSize)} ${unit}`,
-                errorMessage: isValid ? '' : `File size must be less or equal than ${maxSize} KB`,
+                errorMessage: isValid
+                    ? ''
+                    : translate('checks.fileSize.error', `File size must be less or equal than ${maxSize} KB`, {
+                          maxSize,
+                      }),
             };
         }
 
         return {
             isValid: false,
             value: 'n/a',
-            errorMessage: 'Error while fetching file size',
+            errorMessage: translate('checks.fileSize.fetchError', 'Error while fetching file size'),
         };
     });
 }

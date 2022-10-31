@@ -12,7 +12,7 @@ import style from './ImageCheck.module.css';
 interface Props {
     value: string | { __identity: string };
     options: ImageCheckOptions;
-    translate: (id?: string, fallback?: string, params?: Record<string, any>) => string;
+    translate: TranslateMethod;
 }
 
 const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
@@ -40,11 +40,13 @@ const ImageCheck: React.FC<Props> = ({ value, options, translate }) => {
     // Rerun checks if image changes
     useEffect(() => {
         if (image) {
-            checkFilename(image.originalImageResourceUri, options.fileName).then(setFileNameCheck);
-            checkFileSize(image.originalImageResourceUri, options.fileSize).then(setFileSizeCheck);
+            checkFilename(image.originalImageResourceUri, options.fileName, translate).then(setFileNameCheck);
+            checkFileSize(image.originalImageResourceUri, options.fileSize, translate).then(setFileSizeCheck);
             // The dimensions check does not work for SVGs yet as the dimensions are not stored in the image metadata
             if (image.mediaType !== 'image/svg+xml') {
-                checkFileDimensions(image.originalDimensions, options.fileDimensions).then(setFileDimensionsCheck);
+                checkFileDimensions(image.originalDimensions, options.fileDimensions, translate).then(
+                    setFileDimensionsCheck
+                );
             }
         } else {
             setFileNameCheck(null);

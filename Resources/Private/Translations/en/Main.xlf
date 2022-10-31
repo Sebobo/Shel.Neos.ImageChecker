@@ -17,6 +17,18 @@
             <trans-unit id="checks.dimensions.label">
                 <source>Dimensions</source>
             </trans-unit>
+            <trans-unit id="checks.dimensions.error">
+                <source><![CDATA[Image dimensions must be between <strong>{minWidth}&nbsp;x&nbsp;{minHeight}px</strong> and <strong>{maxWidth}&nbsp;x&nbsp;{maxHeight}px</strong>]]></source>
+            </trans-unit>
+            <trans-unit id="checks.fileName.error">
+                <source><![CDATA[The filename has to match the pattern <strong>"{allowedPattern}"</strong>]]></source>
+            </trans-unit>
+            <trans-unit id="checks.fileSize.fetchError">
+                <source>Could not resolve the file size</source>
+            </trans-unit>
+            <trans-unit id="checks.fileSize.error">
+                <source><![CDATA[File size must be less or equal than <strong>{maxSize} KB</strong>]]></source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

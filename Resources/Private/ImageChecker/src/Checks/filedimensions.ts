@@ -5,7 +5,8 @@ const MIN_WIDTH = 0;
 
 export function checkFileDimensions(
     dimensions: { width: number; height: number },
-    options: { maxWidth: number; maxHeight: number; minWidth: number; minHeight: number }
+    options: { maxWidth: number; maxHeight: number; minWidth: number; minHeight: number },
+    translate: TranslateMethod
 ): Promise<CheckResult> {
     const maxWidth = options?.maxWidth || MAX_HEIGHT;
     const maxHeight = options?.maxHeight || MAX_WIDTH;
@@ -18,7 +19,16 @@ export function checkFileDimensions(
 
     const bigEnough = dimensions.width >= minWidth && dimensions.height >= minHeight;
 
-    const errorMessage = `Image dimensions must be between ${minWidth}x${minHeight} and ${maxWidth}x${maxHeight}`;
+    const errorMessage = translate(
+        'checks.dimensions.error',
+        `Image dimensions must be between ${minWidth}x${minHeight}px and ${maxWidth}x${maxHeight}px`,
+        {
+            minWidth,
+            minHeight,
+            maxWidth,
+            maxHeight,
+        }
+    );
 
     return Promise.resolve({
         isValid: smallEnough && bigEnough,
