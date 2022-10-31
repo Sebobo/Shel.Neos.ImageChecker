@@ -9,11 +9,12 @@
     "watch": "neos-react-scripts watch"
   },
   "devDependencies": {
-    "@neos-project/neos-ui-extensibility": "^7.3.5",
-    "@neos-project/react-ui-components": "^7.3.5",
-    "@types/react": "16.14",
+    "@neos-project/build-essentials": "^7.3.6",
+    "@neos-project/neos-ui-extensibility": "^7.3.6",
+    "@neos-project/react-ui-components": "^7.3.6",
+    "@types/react": "16.14.34",
     "plow-js": "^2.2.0",
-    "react": "^16.14"
+    "react": "^16.14.0"
   },
   "neos": {
     "buildTargetDirectory": "../../Public/JavaScript/ImageChecker"
