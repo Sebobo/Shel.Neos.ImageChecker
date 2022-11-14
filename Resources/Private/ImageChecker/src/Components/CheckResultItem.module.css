@@ -1,13 +1,14 @@
 .imageCheckResult td {
     padding: .3rem 0;
-    vertical-align: top;
 }
 
 .imageCheckResult__label {
+    vertical-align: baseline;
 }
 
 .imageCheckResult__icon {
     width: 2rem;
+    vertical-align: baseline;
 }
 
 .imageCheckResult__icon svg {
@@ -20,6 +21,7 @@
 }
 
 .imageCheckResult__value {
+    vertical-align: baseline;
     font-family: monospace;
     max-width: 120px;
     overflow: hidden;
