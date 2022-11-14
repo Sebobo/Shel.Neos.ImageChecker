@@ -12,14 +12,18 @@ export function checkFileSize(
     options: FileSizeCheckOptions,
     translate: TranslateMethod
 ): Promise<CheckResult> {
-    return fetch(url, { method: 'HEAD' }).then((response) => {
+    return fetch(url, { method: 'HEAD' }).then(async (response) => {
         if (response.ok) {
-            // maxSize is given in KB, so we convert the actual filesize to KB too
-            const fileSize = parseInt(response.headers.get('Content-Length')) || 0;
             const fileType = response.headers.get('Content-Type');
+            let fileSize = parseInt(response.headers.get('Content-Length')) || 0;
+
+            // For SVGs we don't get the actual size via a HEAD request, so we need to fetch the whole file
+            if (!fileSize && fileType === 'image/svg+xml') {
+                const blob = await fetch(url, { method: 'GET' }).then((response) => response.blob());
+                fileSize = blob.size;
+            }
 
             let maxSize = options.default || MAX_FILE_SIZE;
-
             switch (fileType) {
                 case 'image/png':
                     maxSize = options.png || maxSize;
@@ -32,7 +36,7 @@ export function checkFileSize(
                     break;
             }
 
-            // filSize is in bytes, maxSize is in KB
+            // fileSize is measured in bytes, maxSize is defined in KB
             const isValid = fileSize <= maxSize * 1024;
 
             let displayFileSize = fileSize;
