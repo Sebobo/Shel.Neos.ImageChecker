@@ -1,13 +1,14 @@
 .CheckResultItem-module__imageCheckResult___W17Y3 td {
     padding: .3rem 0;
-    vertical-align: top;
 }
 
 .CheckResultItem-module__imageCheckResult__label___1DueN {
+    vertical-align: baseline;
 }
 
 .CheckResultItem-module__imageCheckResult__icon___2N4Ry {
     width: 2rem;
+    vertical-align: baseline;
 }
 
 .CheckResultItem-module__imageCheckResult__icon___2N4Ry svg {
@@ -20,6 +21,7 @@
 }
 
 .CheckResultItem-module__imageCheckResult__value___2zUs_ {
+    vertical-align: baseline;
     font-family: monospace;
     max-width: 120px;
     overflow: hidden;
