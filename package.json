@@ -36,5 +36,11 @@
       "description": "Watch the plugin and rebuild on change",
       "icon": "👀"
     }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4
   }
 }
