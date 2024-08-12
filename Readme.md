@@ -1,5 +1,7 @@
 # Image editor plugin with additional checks for Neos CMS
 
+[![Tests](https://github.com/Sebobo/Shel.Neos.ColorPicker/actions/workflows/tests.yml/badge.svg)](https://github.com/Sebobo/Shel.Neos.ColorPicker/actions/workflows/tests.yml)
+
 This package provides a Neos CMS plugin which extends the default Neos image editor with additional checks for the 
 selected image. It supports global and individual configurations for each image type.
 
