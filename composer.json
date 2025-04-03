@@ -2,9 +2,10 @@
   "description": "Image editor with customisable checks for Neos CMS",
   "type": "neos-plugin",
   "name": "shel/neos-image-checker",
+  "license": "MIT",
   "require": {
-    "neos/neos": "^7.3 || ^8.0",
-    "neos/neos-ui": "^7.3 || ^8.0"
+    "neos/neos": "^8.3 || ^9.0",
+    "neos/neos-ui": "^8.3 || ^9.0"
   },
   "extra": {
     "neos": {
